@@ -1,7 +1,8 @@
-import { MyOrdersComponent } from './components/my-orders/my-orders.component';
-import { ProductsComponent } from './components/products/products.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
