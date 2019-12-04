@@ -1,3 +1,4 @@
+import { AppUser } from './../../models/appuser';
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,8 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 
 export class NavbarComponent {
+  appUser: AppUser;
 
   constructor(public auth: AuthService) {
+    this.auth.appUser.subscribe((user: AppUser) => this.appUser = user);
   }
 
   logout() {
