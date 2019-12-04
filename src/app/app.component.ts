@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   constructor(private auth: AuthService, private userService: UsersService, private router: Router) {
-    auth.user$.subscribe(user => {
+    this.auth.user$.subscribe(user => {
       if (user) {
         this.userService.save(user);
         const returnUrl = localStorage.getItem('returnUrl');
