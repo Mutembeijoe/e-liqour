@@ -1,6 +1,5 @@
 import { CategoriesService } from './../../../services/categories.service';
 import { Component, OnInit } from '@angular/core';
-import { runInThisContext } from 'vm';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
