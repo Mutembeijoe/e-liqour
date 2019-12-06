@@ -1,10 +1,23 @@
-<div class="products-row">
-    <div class="card mb-3" style="width: 18rem;" *ngFor="let product of products$ | async">
-        <img [src]="product.imageUrl" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{product.title}}</h5>
-            <p class="card-text">{{product.price | currency}}</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+<div class="row">
+    <div class="col-md-2">
+        <div class="nav flex-column nav-pills text-center border rounded" id="v-pills-tab" aria-orientation="vertical">
+            <a class="nav-link active category-tabs border-bottom" routerLink="/" [class.active]="!category"
+                id="v-pills-home-tab">All</a>
+            <a *ngFor="let c of categories$ | async" routerLink="/" [queryParams]="{category:c.key}"
+                class="nav-link category-tabs border-bottom" [class.active]="category === c.key"
+                id="v-pills-home-tab">{{c.name}}</a>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="products-row">
+            <div class="card mb-3" style="width: 18rem;" *ngFor="let product of filteredProducts">
+                <img [src]="product.imageUrl" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <p class="card-text">{{product.price | currency}}</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
