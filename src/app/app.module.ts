@@ -23,6 +23,7 @@ import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orde
 import { LoginComponent } from './components/login/login.component';
 import { ProductFormComponent } from './components/admin/product-form/product-form.component';
 import { CategoryTabsComponent } from './components/products/category-tabs/category-tabs.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CategoryTabsComponent } from './components/products/category-tabs/categ
     AdminOrdersComponent,
     LoginComponent,
     ProductFormComponent,
-    CategoryTabsComponent
+    CategoryTabsComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

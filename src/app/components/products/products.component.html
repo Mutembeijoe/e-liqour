@@ -3,15 +3,6 @@
         <app-category-tabs [category]="category"></app-category-tabs>
     </div>
     <div class="col-md-10">
-        <div class="products-row">
-            <div class="card mb-3" style="width: 18rem;" *ngFor="let product of filteredProducts">
-                <img [src]="product.imageUrl" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.title}}</h5>
-                    <p class="card-text">{{product.price | currency}}</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                </div>
-            </div>
-        </div>
+        <app-product-card [products]='filteredProducts' class='products-row'></app-product-card>
     </div>
 </div>
