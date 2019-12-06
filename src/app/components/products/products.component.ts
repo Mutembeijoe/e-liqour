@@ -13,9 +13,8 @@ import { switchMap } from 'rxjs/operators';
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
   filteredProducts: Product[] = [];
-  categories$;
   category: string;
-  constructor(private productS: ProductsService, private categoryS: CategoriesService, private route: ActivatedRoute) {
+  constructor(private productS: ProductsService, private route: ActivatedRoute) {
     this.productS.getAll().pipe(
       switchMap((products: Product[]) => {
         this.products = products;
@@ -25,9 +24,6 @@ export class ProductsComponent implements OnInit {
       this.category = params.get('category');
       this.filteredProducts = (this.category) ? this.products.filter(product => product.category === this.category) : this.products;
     });
-
-    this.categories$ = this.categoryS.getAll();
-
   }
 
   ngOnInit() {

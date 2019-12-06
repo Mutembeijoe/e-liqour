@@ -1,12 +1,6 @@
 <div class="row">
     <div class="col-md-2">
-        <div class="nav flex-column nav-pills text-center border rounded" id="v-pills-tab" aria-orientation="vertical">
-            <a class="nav-link active category-tabs border-bottom" routerLink="/" [class.active]="!category"
-                id="v-pills-home-tab">All</a>
-            <a *ngFor="let c of categories$ | async" routerLink="/" [queryParams]="{category:c.key}"
-                class="nav-link category-tabs border-bottom" [class.active]="category === c.key"
-                id="v-pills-home-tab">{{c.name}}</a>
-        </div>
+        <app-category-tabs [category]="category"></app-category-tabs>
     </div>
     <div class="col-md-10">
         <div class="products-row">
