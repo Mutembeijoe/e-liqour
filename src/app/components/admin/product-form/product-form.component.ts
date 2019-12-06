@@ -14,7 +14,7 @@ export class ProductFormComponent implements OnInit {
   product = {};
   id;
   constructor(private route: ActivatedRoute, private router: Router, private categories: CategoriesService, private products: ProductsService) {
-    this.categories$ = categories.getCategories();
+    this.categories$ = categories.getAll();
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id) {
       this.products.getProduct(this.id).pipe(take(1)).subscribe(x => this.product = x);
