@@ -3,9 +3,11 @@
         <app-category-tabs [category]="category"></app-category-tabs>
     </div>
     <div class="col-md-10">
-        <ng-container *ngFor="let product of filteredProducts">
-            <app-product-card [product]='product' [shopping-cart]='shoppingCart' class='products-row'>
-            </app-product-card>
-        </ng-container>
+        <div class="products-row">
+            <ng-container *ngFor="let product of filteredProducts">
+                <app-product-card [product]='product' [shopping-cart]='shoppingCart'>
+                </app-product-card>
+            </ng-container>
+        </div>
     </div>
 </div>
