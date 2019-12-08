@@ -1,9 +1,7 @@
-import { CartItem } from './../models/cart-item';
 import { Product } from './../models/product';
-import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
-import { take } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { take, map } from 'rxjs/operators';
 import { ShoppingCart } from '../models/shopping-cart';
 
 @Injectable({
@@ -59,5 +57,18 @@ export class ShoppingCartService {
 
   async removeFromCart(product: Product) {
     this.updateQuantity(product, -1);
+  }
+
+  async getTotalItemsCount() {
+    let shoppingCartCount: number;
+    return (await this.getCart()).pipe(
+      map((cart: ShoppingCart) => {
+        shoppingCartCount = 0;
+        for (const productId in cart.items) {
+          shoppingCartCount += cart.items[productId].quantity;
+        }
+        return shoppingCartCount;
+      })
+    )
   }
 }
