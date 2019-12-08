@@ -1,6 +1,8 @@
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 import { AppUser } from './../../models/appuser';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { ShoppingCart } from 'src/app/models/shopping-cart';
 
 
 @Component({
@@ -9,14 +11,27 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   appUser: AppUser;
+  shoppingCartCount: number;
 
-  constructor(public auth: AuthService) {
+  constructor(public auth: AuthService, private cartS: ShoppingCartService) {
     this.auth.appUser.subscribe((user: AppUser) => this.appUser = user);
   }
 
   logout() {
     this.auth.logout();
   }
+
+  async ngOnInit() {
+    const cart$ = await this.cartS.getCart();
+    cart$.subscribe((cart: ShoppingCart) => {
+      this.shoppingCartCount = 0;
+      for (const productId in cart.items) {
+        this.shoppingCartCount += cart.items[productId].quantity;
+      }
+      console.log(this.shoppingCartCount);
+    });
+  }
+
 }

@@ -4,6 +4,7 @@ import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { ShoppingCart } from '../models/shopping-cart';
 
 @Injectable({
   providedIn: 'root'
