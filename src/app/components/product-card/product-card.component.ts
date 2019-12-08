@@ -18,6 +18,9 @@ export class ProductCardComponent implements OnInit {
     this.cart.addToCart(this.product);
   }
 
+  removeFromCart() {
+    this.cart.removeFromCart(this.product);
+  }
   getQuantity() {
     if (!this.shoppingCart) {
       return 0;
