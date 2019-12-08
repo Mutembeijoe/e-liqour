@@ -1,5 +1,7 @@
 <div class="card mb-3" style="width: 18rem;">
-    <img [src]="product.imageUrl" class="card-img-top" alt="...">
+    <div class="product-image" [style.background]="'url('+product.imageUrl+')'">
+
+    </div>
     <div class="card-body">
         <h5 class="card-title">{{product.title}}</h5>
         <p class="card-text">{{product.price | currency}}</p>

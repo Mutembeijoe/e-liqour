@@ -1,3 +1,10 @@
 .card-footer{
     padding:0;
 }
+.product-image{
+    height:300px;
+    background-position: center !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+
+}
