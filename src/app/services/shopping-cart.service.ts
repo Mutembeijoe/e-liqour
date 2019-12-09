@@ -19,7 +19,8 @@ export class ShoppingCartService {
 
   async getCart() {
     const cartId = await this.getOrCreateCart();
-    return this.db.object(`/shopping-carts/${cartId}`).valueChanges();
+    return this.db.object(`/shopping-carts/${cartId}`).valueChanges()
+      .pipe(map((x: ShoppingCart) => new ShoppingCart(x.items)));
   }
 
   private getItem(cartId, productId) {
@@ -59,16 +60,16 @@ export class ShoppingCartService {
     this.updateQuantity(product, -1);
   }
 
-  async getTotalItemsCount() {
-    let shoppingCartCount: number;
-    return (await this.getCart()).pipe(
-      map((cart: ShoppingCart) => {
-        shoppingCartCount = 0;
-        for (const productId in cart.items) {
-          shoppingCartCount += cart.items[productId].quantity;
-        }
-        return shoppingCartCount;
-      })
-    )
-  }
+  // async getTotalItemsCount() {
+  //   let shoppingCartCount: number;
+  //   return (await this.getCart()).pipe(
+  //     map((cart: ShoppingCart) => {
+  //       shoppingCartCount = 0;
+  //       for (const productId in cart.items) {
+  //         shoppingCartCount += cart.items[productId].quantity;
+  //       }
+  //       return shoppingCartCount;
+  //     })
+  //   )
+  // }
 }
