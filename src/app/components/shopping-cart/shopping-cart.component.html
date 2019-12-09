@@ -1,32 +1,37 @@
 <h1>Shopping Cart</h1>
-<ng-container *ngIf="cart$ | async as cart">
+<div class="row col-10" *ngIf="cart$ | async as cart">
     <p>You have {{cart.totalItemsCount}} items in your shopping cart</p>
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th class="text-center" style="width:230px;">Quantity</th>
+                <th class="text-right" style="width:200px;">Price</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of cart.items">
+                <td>
+                    <div class="thumbnail" [style.backgroundImage]="'url('+ item.product.imageUrl +')'"></div>
+                </td>
                 <td>
                     {{item.product.title}}
                 </td>
                 <td>
                     <app-product-quantity [product]="item.product" [shopping-cart]="cart"></app-product-quantity>
                 </td>
-                <td>{{item.totalPrice | currency :'KSh '}}</td>
+                <td class="text-right">{{item.totalPrice | currency :'KSh '}}</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th></th>
                 <th></th>
-                <th>{{cart.totalPrice | currency :'KSh '}}</th>
+                <th></th>
+                <th class="text-right">{{cart.totalPrice | currency :'KSh '}}</th>
             </tr>
         </tfoot>
     </table>
     <div (click)="clearCart()" class="btn btn-outline-danger btn-sm">Clear Cart</div>
-</ng-container>
+</div>
