@@ -14,7 +14,9 @@
                 <td>
                     {{item.product.title}}
                 </td>
-                <td>{{item.quantity}}</td>
+                <td>
+                    <app-product-quantity [product]="item.product" [shopping-cart]="cart"></app-product-quantity>
+                </td>
                 <td>{{item.totalPrice | currency :'KSh '}}</td>
             </tr>
         </tbody>
@@ -26,4 +28,5 @@
             </tr>
         </tfoot>
     </table>
+    <div (click)="clearCart()" class="btn btn-outline-danger btn-sm">Clear Cart</div>
 </ng-container>

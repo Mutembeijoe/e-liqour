@@ -5,6 +5,7 @@ export class ShoppingCart {
     items: CartItem[] = [];
     constructor(public itemsMap: { [productId: string]: CartItem }) {
         // tslint:disable-next-line: forin
+        this.itemsMap = itemsMap || {};
         for (let productId in itemsMap) {
             let item = itemsMap[productId];
             this.items.push(new CartItem(item.product, item.quantity));
