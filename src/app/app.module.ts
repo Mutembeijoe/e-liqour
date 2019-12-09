@@ -24,6 +24,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductFormComponent } from './components/admin/product-form/product-form.component';
 import { CategoryTabsComponent } from './components/products/category-tabs/category-tabs.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductQuantityComponent } from './components/product-quantity/product-quantity.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     LoginComponent,
     ProductFormComponent,
     CategoryTabsComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductQuantityComponent
   ],
   imports: [
     BrowserModule,
