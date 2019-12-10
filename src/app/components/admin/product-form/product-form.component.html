@@ -45,7 +45,7 @@
                     <div *ngIf="imageUrl.errors.url">Please enter a valid url</div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" [disabled]='!f.valid'> Add </button>
+            <button type="submit" class="btn btn-primary mx-3" [disabled]='!f.valid'> Add </button>
             <button type="button" class="btn btn-danger" (click)="deleteProduct()"> Delete </button>
         </form>
     </div>
@@ -54,7 +54,7 @@
             <img [src]="imageUrl.value" class="card-img-top" alt="image">
             <div class="card-body">
                 <h5 class="card-title">{{product.title}}</h5>
-                <p class="card-text">{{product.price | currency}} </p>
+                <p class="card-text">{{product.price | currency:'KSh '}} </p>
             </div>
         </div>
     </div>

@@ -12,13 +12,7 @@ import { take } from 'rxjs/operators';
 })
 export class ProductFormComponent implements OnInit {
   categories$;
-  product: Product = {
-    key: '',
-    title: '',
-    imageUrl: '',
-    category: '',
-    price: 0
-  };
+  product = {};
   id;
   constructor(private route: ActivatedRoute, private router: Router, private categories: CategoriesService, private products: ProductsService) {
     this.categories$ = categories.getAll();
