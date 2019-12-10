@@ -13,6 +13,7 @@ import { CheckOutComponent } from './components/check-out/check-out.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AdminGuardService } from './services/admin-guard.service';
 import { ProductFormComponent } from './components/admin/product-form/product-form.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuardService] },
   { path: 'order-success/:id', component: OrderSuccessComponent, canActivate: [AuthGuardService] },
   { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuardService] },
+  { path: 'my/orders/:id', component: OrderDetailsComponent, canActivate: [AuthGuardService] },
 
   { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminGuardService] },
   { path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuardService, AdminGuardService] },

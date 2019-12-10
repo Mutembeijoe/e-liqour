@@ -28,4 +28,8 @@ export class OrderService {
   getProduct(key) {
     return this.db.object(`/orders/${key}`).valueChanges();
   }
+
+  getOrder(key) {
+    return this.db.object(`/orders/${key}`).valueChanges();
+  }
 }

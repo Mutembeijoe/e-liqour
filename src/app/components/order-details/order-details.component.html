@@ -1,0 +1,38 @@
+<div class="card" *ngIf="order">
+    <div class="card-body">
+        <div class="mb-3">
+            <span class="card-title h5">Order id # {{key}}</span>
+            <span class="float-right">{{order.datePlaced | date}}</span>
+        </div>
+        <h6 class="card-subtitle my-3">Name: {{order.shipping.name}}</h6>
+        <h6 class="card-subtitle mb-2 font-weight-bold" style="text-decoration: underline;">Products</h6>
+        <div>
+            <ul class="list-group list-group-flush">
+                <li *ngFor="let item of order.items" class="list-group-item">
+                    {{item.quantity}} x {{item.product.title}}
+                    <div class="float-right">
+                        {{item.totalPrice | currency:'KSh ' }}
+                    </div>
+                </li>
+                <li class="list-group-item font-weight-bold">
+                    Total
+                    <div class="float-right">
+                        {{totalPrice | currency:'KSh '}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <h6 class="card-subtitle my-3 font-weight-bold" style="text-decoration: underline;">Shipping</h6>
+        <div>
+            <div>
+                <span class="lead mx-2"> Address: </span>
+                <span>{{order.shipping.addressTwo}},</span>
+                <span class="mx-2">{{order.shipping.addressOne}}</span>
+            </div>
+            <div>
+                <span class="lead mx-2"> City: </span>
+                <span>{{order.shipping.city}}</span>
+            </div>
+        </div>
+    </div>
+</div>
