@@ -45,7 +45,7 @@
                     <div *ngIf="imageUrl.errors.url">Please enter a valid url</div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" [class.disabled]='!f.valid'> Add </button>
+            <button type="submit" class="btn btn-primary" [disabled]='!f.valid'> Add </button>
             <button type="button" class="btn btn-danger" (click)="deleteProduct()"> Delete </button>
         </form>
     </div>
