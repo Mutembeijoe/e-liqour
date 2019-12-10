@@ -32,4 +32,11 @@ export class OrderService {
   getOrder(key) {
     return this.db.object(`/orders/${key}`).valueChanges();
   }
+  getUserOrders(userId) {
+    return this.db.list('/orders/', ref => ref.orderByChild('userId').equalTo(userId)).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    );
+  }
 }
