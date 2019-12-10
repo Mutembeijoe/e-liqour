@@ -1,3 +1,4 @@
+import { OrderService } from './../../../services/order.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-orders.component.css']
 })
 export class AdminOrdersComponent implements OnInit {
-
-  constructor() { }
+  orders$;
+  constructor(private orderS: OrderService) {
+    this.orders$ = this.orderS.getOrders();
+  }
 
   ngOnInit() {
   }
