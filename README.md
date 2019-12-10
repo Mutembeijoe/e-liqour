@@ -7,10 +7,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * You can view the live version of the app in [Live page](https://my-shop-6cd77.firebaseapp.com/  "e-liqour")
 
 ## Screenshots
-![image](https://github.com/Mutembeijoe/hood_yetu/blob/master/screenshots/home.png)
-![image](https://github.com/Mutembeijoe/hood_yetu/blob/master/screenshots/update_product.png)
-![image](https://github.com/Mutembeijoe/hood_yetu/blob/master/screenshots/cart.png)
-![image](https://github.com/Mutembeijoe/hood_yetu/blob/master/screenshots/admin_products.png)
+![image](https://github.com/Mutembeijoe/eshop/blob/master/screenshots/home.png)
+![image](https://github.com/Mutembeijoe/eshop/blob/master/screenshots/update_product.png)
+![image](https://github.com/Mutembeijoe/eshop/blob/master/screenshots/cart.png)
+![image](https://github.com/Mutembeijoe/eshop/blob/master/screenshots/admin_products.png)
 
 
 ## Technologies Used
