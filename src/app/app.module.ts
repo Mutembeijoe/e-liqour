@@ -25,6 +25,7 @@ import { ProductFormComponent } from './components/admin/product-form/product-fo
 import { CategoryTabsComponent } from './components/products/category-tabs/category-tabs.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductQuantityComponent } from './components/product-quantity/product-quantity.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ProductQuantityComponent } from './components/product-quantity/product-
     ProductFormComponent,
     CategoryTabsComponent,
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,

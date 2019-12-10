@@ -1,35 +1,42 @@
-<fieldset>
-    <legend class="h3">Shipping</legend>
-    <form #f="ngForm" (ngSubmit)="placeOrder(f.value)">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input ngModel #name="ngModel" type="text" name="name" id="name" class="form-control" required>
-            <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
-                This field is required
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="address">Address</label>
-            <input ngModel #addressOne="ngModel" type="text" name="addressOne" id="address" class="form-control"
-                placeholder="line 1" required>
-            <br>
-            <div class="alert alert-danger" *ngIf="addressOne.touched && addressOne.invalid">
-                This field is required
-            </div>
-            <input type="text" ngModel #addressTwo="ngModel" name="addressTwo" class="form-control" placeholder="line 2"
-                required>
-            <div class="alert alert-danger" *ngIf="addressTwo.touched && addressTwo.invalid">
-                This field is required
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="city">City/Town</label>
-            <input ngModel #city="ngModel" type="text" name="city" id="city" class="form-control" required>
+<div class="row">
+    <div class="col-md-6">
+        <fieldset>
+            <legend class="h3">Shipping</legend>
+            <form #f="ngForm" (ngSubmit)="placeOrder(f.value)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input ngModel #name="ngModel" type="text" name="name" id="name" class="form-control" required>
+                    <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                        This field is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input ngModel #addressOne="ngModel" type="text" name="addressOne" id="address" class="form-control"
+                        placeholder="line 1" required>
+                    <br>
+                    <div class="alert alert-danger" *ngIf="addressOne.touched && addressOne.invalid">
+                        This field is required
+                    </div>
+                    <input type="text" ngModel #addressTwo="ngModel" name="addressTwo" class="form-control"
+                        placeholder="line 2" required>
+                    <div class="alert alert-danger" *ngIf="addressTwo.touched && addressTwo.invalid">
+                        This field is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="city">City/Town</label>
+                    <input ngModel #city="ngModel" type="text" name="city" id="city" class="form-control" required>
 
-            <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
-                This field is required
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary" [disabled]='!f.valid'>Place Order</button>
-    </form>
-</fieldset>
+                    <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+                        This field is required
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]='!f.valid'>Place Order</button>
+            </form>
+        </fieldset>
+    </div>
+    <div class="col-md-6">
+        <app-order-summary [cart]="cart"></app-order-summary>
+    </div>
+</div>
